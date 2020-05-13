@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>They are coming...</title>
+		<link 
+			rel="stylesheet" 
+			type="text/css" 
+			href="{% static 'book/style.css' %}">
+		<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;700&display=swap" 
+			rel="stylesheet">
+		<script src="{% static 'book/index.js' %}"></script>
+	</head>
+	<body>
+		<header>
+			<h1 class="noselect">They are coming...</h1>
+			<nav>
+				<a href="/"><span class="noselect">Start over</span></a>
+				<a href="/about"><span class="noselect">About</span></a>
+			</nav>
+		</header>
+		<article>
+			<div class="story">
+				<h2 class="story_title">
+					{{ story.title }}
+				</h2>
+				<div class="story_body">
+					{{story.body}}
+				</div>
+			</div>
+			<div class="choices">
+				{% for choice in choices %}
+					<a href={{ choice.next_story.id }}>
+						<div class="choice_body">
+							<p>{{choice.body}}</p>
+						</div>
+					</a>
+				{% endfor %}
+			</div>
+		</article>
+		<footer>
+			<span class="copyright noselect">
+				<time>{% now "Y" %}</time> utkusarioglu
+			</span>
+		</footer>
+	</body>
+</html>

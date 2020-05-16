@@ -29,7 +29,7 @@ function init() {
     window.addEventListener('load', () => getThings())
 }
 
-init();
+// init();
 
 function getThings() {
     fetch("/story/1?format=json")

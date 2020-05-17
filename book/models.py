@@ -24,7 +24,7 @@ class Story(models.Model):
 
 class Choice(models.Model):
     body = models.CharField(max_length=200)
-    story_id = models.ForeignKey(
+    host_story = models.ForeignKey(
         Story, 
         on_delete=models.CASCADE, 
         related_name="choices")
@@ -38,12 +38,12 @@ class Choice(models.Model):
         return self.body
 
 class ChoiceRecord(models.Model):
-    host_story_id = models.ForeignKey(
+    host_story = models.ForeignKey(
         Story,
         on_delete=models.CASCADE,
         related_name="host_story_id"
     )
-    next_story_id = models.ForeignKey(
+    next_story = models.ForeignKey(
         Story,
         on_delete=models.CASCADE,
         related_name="next_story_id"

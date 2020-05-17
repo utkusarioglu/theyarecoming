@@ -89,9 +89,9 @@ DATABASES = {
     }
 }
 
-#GRAPHQL
+# #GRAPHQL
 GRAPHENE = {
-    'SCHEMA': 'book'
+    'SCHEMA': 'theyarecoming.schema.schema',
 }
 
 

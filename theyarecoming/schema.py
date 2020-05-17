@@ -1,7 +1,7 @@
 import graphene
-import theyarecoming.book.schema
+import book.schema
 
-class Query(graphene.ObjectType):
+class Query(book.schema.Query ,graphene.ObjectType):
     pass
 
 schema = graphene.Schema(query=Query)

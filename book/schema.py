@@ -19,4 +19,4 @@ class Query(object):
         return Story.objects.all()
 
     def resolve_all_choices(self, info, **kwargs):
-        return Choice.objects.select_related("story").all()
+        return Choice.objects.select_related("host_story_id").all()

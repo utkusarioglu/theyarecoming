@@ -31,7 +31,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'graphene_django',
     'book.apps.BookConfig',
+    # "theyarecoming.book",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -85,6 +87,11 @@ DATABASES = {
         'HOST': 'db',
         'PORT': 5432,
     }
+}
+
+#GRAPHQL
+GRAPHENE = {
+    'SCHEMA': 'book'
 }
 
 
